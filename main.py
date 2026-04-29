@@ -4,6 +4,8 @@ import threading
 import subprocess
 import time
 
+from ppo_model import PPOAgent
+
 NUM_INSTANCES = 1
 BASE_PORT = 6000
 batch_size = 150
@@ -12,7 +14,8 @@ epochs = 8000
 
 jar_path = "DDQN_TRAIN.jar"
 
-agent = DQNAgent()
+# agent = DQNAgent()
+agent = PPOAgent()
 
 fallback_app = create_flask_app(agent, BASE_PORT)
 
