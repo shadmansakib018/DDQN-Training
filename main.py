@@ -8,7 +8,7 @@ from ppo_model import PPOAgent
 
 NUM_INSTANCES = 1
 BASE_PORT = 6000
-batch_size = 150
+batch_size = 50
 lb_type = 4
 epochs = 8000
 
