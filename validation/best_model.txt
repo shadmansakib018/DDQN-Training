@@ -1,1 +1,0 @@
-checkpoints\checkpoint_step_2200.pth,10.347
