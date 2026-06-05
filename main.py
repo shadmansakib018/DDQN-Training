@@ -1,10 +1,8 @@
 from flask_server import create_flask_app
-from dqn_model import DQNAgent
+from actor_critic_model import ACAgent
 import threading
 import subprocess
 import time
-
-from ppo_model import PPOAgent
 
 NUM_INSTANCES = 1
 BASE_PORT = 6000
@@ -12,10 +10,9 @@ batch_size = 50
 lb_type = 4
 epochs = 8000
 
-jar_path = "PPO_TRAIN_10VM.jar"
+jar_path = "AC-10VM-TRAIN.jar"
 
-# agent = DQNAgent()
-agent = PPOAgent()
+agent = ACAgent()
 
 fallback_app = create_flask_app(agent, BASE_PORT)
 
