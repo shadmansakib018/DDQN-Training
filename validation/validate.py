@@ -12,7 +12,7 @@ from ppo_model import PPOAgent
 checkpoint_path = sys.argv[1]  # path passed from main.py
 BASE_PORT = 3000
 # jar_path = "DDQN_VALIDATE.jar"
-jar_path = os.path.join(os.path.dirname(__file__), "VALIDATE_10VM_PPO.jar")
+jar_path = os.path.join(os.path.dirname(__file__), "PPO-10VM-VALIDATE.jar")
 num_epochs = 50
 batch_size = 50
 lb = 4

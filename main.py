@@ -12,7 +12,7 @@ batch_size = 50
 lb_type = 4
 epochs = 8000
 
-jar_path = "PPO_TRAIN_10VM.jar"
+jar_path = "PPO-10VM-TRAIN.jar"
 
 # agent = DQNAgent()
 agent = PPOAgent()

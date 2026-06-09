@@ -1,1 +1,1 @@
-checkpoints\checkpoint_step_3200.pth,4.632
+checkpoints\checkpoint_step_3200.pth,3.423
