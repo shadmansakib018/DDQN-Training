@@ -19,24 +19,25 @@ checkpoints = list(range(2000, 2000 + len(values) * 100, 100))
 min_val = min(values)
 min_idx = values.index(min_val)
 
-colors = ["#e74c3c" if v == min_val else "#3498db" for v in values]
+plt.figure(figsize=(12, 6))
+plt.plot(checkpoints, values, label="Average Response Time", marker='o')
 
-fig, ax = plt.subplots(figsize=(14, 6))
+# Highlight the minimum value with a red marker
+plt.scatter(checkpoints[min_idx], min_val, color='red', zorder=5, label=f"Lowest value: {min_val:.3f} s")
 
-ax.scatter(checkpoints, values, color=colors, s=60, zorder=3)
-ax.plot(checkpoints, values, color="#aaaaaa", linewidth=0.8, zorder=2)
+# Title and labels with bold font weight
+plt.title("Model Validation: Finding the Optimal Response Time", fontsize=16)
+plt.xlabel("Model Checkpoint", fontsize=16)
+plt.ylabel("Average Response Time (s)", fontsize=16)
 
-ax.scatter(checkpoints[min_idx], min_val, color="#e74c3c", s=120, zorder=4,
-           label=f"Lowest: Checkpoint {checkpoints[min_idx]} ({min_val:.3f}s)")
-ax.scatter([], [], color="#3498db", s=60, label="Other checkpoints")
+# Add a legend
+plt.legend()
 
-ax.set_xlabel("Model Checkpoint", fontsize=13)
-ax.set_ylabel("Avg response time (s)", fontsize=13)
-ax.set_title("Model Validation: Finding the Optimal Model", fontsize=15, fontweight="bold")
-ax.set_xticks(range(2000, checkpoints[-1] + 1, 1000))
-ax.legend(fontsize=11)
-ax.grid(axis="y", linestyle="--", alpha=0.4)
+# Make axis tick labels bold
+plt.tick_params(axis='both', labelsize=14)
 
-plt.tight_layout()
-plt.savefig(script_dir / "validation_art.png", dpi=150)
+plt.savefig(script_dir / "validation_art.png", dpi=300, bbox_inches="tight")
+
+# Show the plot
+plt.grid(True, color='lightgray')
 plt.show()
